@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import Total from "./components/Total/Total";
-import Cart from "./components/Cart/Cart";
-import Features from "./components/Features/Features";
+import MainForm from "./components/MainForm/MainForm";
+import MainSummary from "./components/MainSummary/MainSummary";
 
 // This object will allow us to
 // easily convert numbers into US dollar values
@@ -51,7 +50,7 @@ class App extends Component {
         <main>
           <form className="main__form">
             <h2>Customize your laptop</h2>
-            <Features
+            <MainForm
               {...this.props}
               {...this.state}
               currencyFormat={USCurrencyFormat}
@@ -60,8 +59,7 @@ class App extends Component {
           </form>
           <section className="main__summary">
             <h2>Your cart</h2>
-            <Cart currencyFormat={USCurrencyFormat} {...this.state} />
-            <Total currencyFormat={USCurrencyFormat} {...this.state} />
+            <MainSummary currencyFormat={USCurrencyFormat} {...this.state} />
           </section>
         </main>
       </div>
